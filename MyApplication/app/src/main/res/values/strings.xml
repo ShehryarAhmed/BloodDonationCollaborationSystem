@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Blood DonationCollaborationSystem</string>
-
+    <string name="app_name">My Application</string>
     <string name="action_sign_in_short">Register</string>
     <string name="email">Email</string>
     <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
@@ -32,4 +31,12 @@
     <string name="fName">First Name</string>
     <string name="lName">Last Name</string>
     <string name="BloodGroup">Blood Group</string>
+    <string name="sign_out">SignOut</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
+
