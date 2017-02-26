@@ -39,6 +39,7 @@ public class UserDetail {
         this.bloodGroup = bloodGroup;
     }
 
+    public UserDetail(){}
     public String getFname() {
 
         return fname;

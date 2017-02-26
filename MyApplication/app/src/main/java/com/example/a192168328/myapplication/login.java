@@ -30,7 +30,7 @@ public class login extends AppCompatActivity {
 
         if (auth.getCurrentUser() != null)
         {
-            startActivity(new Intent(login.this,MainActivity.class));
+            startActivity(new Intent(login.this,Main2Activity.class));
             finish();
         }
         setContentView(R.layout.activity_login);

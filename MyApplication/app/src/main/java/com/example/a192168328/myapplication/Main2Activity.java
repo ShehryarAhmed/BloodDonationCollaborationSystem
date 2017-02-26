@@ -1,8 +1,11 @@
 package com.example.a192168328.myapplication;
 
+import android.content.Intent;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,25 +15,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.example.a192168328.myapplication.Model.UserDetail;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    FirebaseAuth mFirebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        mFirebaseAuth = FirebaseAuth.getInstance();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,6 +40,7 @@ public class Main2Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View nav_view = navigationView.getHeaderView(0);
     }
 
     @Override
@@ -67,8 +68,11 @@ public class Main2Activity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()){
+            case R.id.sign_out_menu:
+                mFirebaseAuth.signOut();
+                Intent intent = new Intent(Main2Activity.this, signup.class);
+                startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -79,7 +83,36 @@ public class Main2Activity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        FragmentManager fm = getSupportFragmentManager();
 
+        switch (id){
+            case R.id.nav_home :{
+                fm.beginTransaction().replace(R.id.content_main2, new Home()).commit();
+            }
+            break;
+
+            case R.id.nav_myrequest :{
+                fm.beginTransaction().replace(R.id.content_main2, new Home()).commit();
+            }
+            break;
+
+            case R.id.nav_postrequest :{
+                fm.beginTransaction().replace(R.id.content_main2, new Home()).commit();
+            }
+            break;
+
+            case R.id.nav_notification :{
+                fm.beginTransaction().replace(R.id.content_main2, new Home()).commit();
+            }
+            break;
+
+            case R.id.nav_setting :{
+                fm.beginTransaction().replace(R.id.content_main2, new Home()).commit();
+            }
+            break;
+            default:
+                return true;
+        }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
