@@ -92,22 +92,22 @@ public class Main2Activity extends AppCompatActivity
             break;
 
             case R.id.nav_myrequest :{
-                fm.beginTransaction().replace(R.id.content_main2, new Home()).commit();
+                fm.beginTransaction().replace(R.id.content_main2, new MyRequest()).commit();
             }
             break;
 
             case R.id.nav_postrequest :{
-                fm.beginTransaction().replace(R.id.content_main2, new Home()).commit();
+                fm.beginTransaction().replace(R.id.content_main2, new PostRequest()).commit();
             }
             break;
 
             case R.id.nav_notification :{
-                fm.beginTransaction().replace(R.id.content_main2, new Home()).commit();
+                fm.beginTransaction().replace(R.id.content_main2, new Notification()).commit();
             }
             break;
 
             case R.id.nav_setting :{
-                fm.beginTransaction().replace(R.id.content_main2, new Home()).commit();
+                fm.beginTransaction().replace(R.id.content_main2, new Setting()).commit();
             }
             break;
             default:
