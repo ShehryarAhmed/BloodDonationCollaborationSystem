@@ -43,11 +43,11 @@
             android:text="Urgency"
             android:textSize="24sp"/>
         <Spinner
-            android:id="@+id/spiiner_units"
+            android:id="@+id/spinner_urgency"
             android:paddingLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/NoOfUnits"
+            android:entries="@array/Urgency"
             >
 
         </Spinner>
